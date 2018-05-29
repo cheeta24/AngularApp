@@ -1,0 +1,18 @@
+section, footer, header, aside, nav{
+	display: block;
+}
+
+.acctDiv{
+
+	border: solid 1px #555;
+	border-radius: 15px;
+	box-shadow: 2px -3px 3px  rgba(0,0,0,0.4);
+	-moz-box-shadow: 2px -3px 3px  rgba(0,0,0,0.4);
+	-webkit-box-shadow: 2px -3px 3px  rgba(0,0,0,0.4);
+	line-height: 2;
+	margin: 15px 0px 15px 0px;
+	padding: 15px;
+}
+.tiltleSpan{
+	font-weight: bold;
+}

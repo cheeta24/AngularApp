@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/home">Home</a></li>
+            <li><a href="#/account">Account</a></li>
+            <li><a href="#/transfer">Payments</a></li>
+            <li><a href="#/login">Logout</a></li>
+            
+        </ul>
+      </div>
+</nav>
+<div>
+	<span><h3> List of Active Accounts </h3></span>
+
+	<table class="table table-striped">
+        <tr>
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Account Type</th>
+            <th></th>
+        </tr>
+
+        <tr ng-repeat="account in list">
+            <td>{{account.accountID}}</td>
+            <td>{{account.Name}}</td>
+            <td>{{account.accountType}}</td>
+            <td><button class="btn btn-link" ng-click="txnDetails(account.accountID)">Details</button></td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/home">Home</a></li>
+            <li><a href="#/account">Account</a></li>
+            <li><a href="#/transfer">Payments</a></li>
+            <li><a href="#/login">Logout</a></li>
+            
+        </ul>
+      </div>
+  </nav>
+  <center><h3>Payments Page</h3></center>
+  
+  <center>
+        <fieldset style="width: 700px;">
+<form name="form">
+  <table class="table">
+    <tr>
+       <td>
+         <div class="form-group">
+           From Account:<select class="form-control" ng-model="selectedFromName" ng-options="x.accountID +'-' + x.Name for x in fromnames"></select>
+         </div>
+       </td>
+      <td>
+        <div class="form-group">
+          To Account: <select class="form-control" ng-model="selectedToName" ng-options="y.accountID +'-' + y.Name for y in tonames"></select>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+<table class="table">
+  <tr>
+    <td>
+      <div class="form-group">
+        Amount: <input type="text" class="form-control" ng-model="amount" placeholder="amount" required=""/>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        Remark: <input type="text" class="form-control" ng-model="remark" placeholder="remark" required=""/>
+      </div>
+    </td>
+  </tr>
+</table>
+
+ <p>Choose Transfer Mode</p>
+
+<table class="table" style="width:250px;" >
+  <tr>
+    <td>
+      <div>
+       IMPS <input type="radio" ng-model="myVar" value="imps">
+      </div>
+    </td>
+    <td>
+      <div>
+        NEFT <input type="radio" ng-model="myVar" value="neft">
+      </div>
+    </td>
+    <td>
+      <div>
+         RTGS <input type="radio" ng-model="myVar" value="rtgs">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<div ng-switch="myVar">
+  <div ng-switch-when="imps">
+     <p>You Have Selected IMPS Transfer</p>
+  </div>
+  <div ng-switch-when="neft">
+     <p>You Have Selected NEFT Transfer</p>
+  </div>
+  <div ng-switch-when="rtgs">
+    <p>You Have Selected RTGS Transfer</p>
+  </div>
+</div>
+
+    <br />
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-success" value="Transferred" ng-click="onTransfer()" ng-disabled="form.$invalid || dataLoading">Transfer</button>
+      <span class="text-danger" style="color:red">{{ error }}</span>
+
+      <button type="submit" class="btn btn-success" value="Transferred" ng-click="onCancel()">Cancel</button>
+      <span class="text-danger" style="color:red">{{ error }}</span></br>
+      <span ng-bind="Message"></span>
+    </div>
+</fieldset>
+</form>
+</center>
+</body>
+
+
+</html>

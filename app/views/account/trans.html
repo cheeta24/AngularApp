@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/home">Home</a></li>
+             <li><a href="#/account">Account</a></li>
+             <li><a href="#/transfer">Payments</a></li>
+             <li><a href="#/login">Logout</a></li>
+                
+        </ul>
+    </div>
+</nav>
+
+<div>
+	<span><h3> Transaction details </h3></span>
+
+	<div class="acctDiv">
+        <div>
+            <span class="tiltleSpan">Account Number: </span>
+            <span class="dataSpan">{{transactions.accountID}}</span>
+        </div>
+        <div>
+            <span class="tiltleSpan">Name: </span>
+            <span class="dataSpan">{{transactions.Name}}</span>
+        </div>
+        <div>
+            <span class="tiltleSpan">Account Type: </span>
+            <span class="dataSpan">{{transactions.accountType}}</span>
+        </div>
+	</div>
+	<div>
+		<table class="table table-striped">
+        	<tr>
+        		<th>#</th>
+            	<th>Transaction ID</th>
+            	<th>Payee</th>
+            	<th>Amount</th>
+            	<th>Transaction Date</th>
+        	</tr>
+
+        	<tr ng-repeat="txn in transactions.transaction">
+        		<td>{{$index + 1}}</td>
+            	<td>{{txn.transactionID}}</td>
+            	<td>{{txn.payee}}</td>
+            	<td>{{txn.Amount}}</td>
+            	<td>{{txn.transdate}}</td>
+        	</tr>
+    	</table>
+	</div>
+</div>	
